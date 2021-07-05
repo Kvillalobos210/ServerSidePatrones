@@ -1,20 +1,14 @@
 package com.appdhome.controller;
 
 import com.appdhome.entities.Appointment;
-import com.appdhome.entities.Customer;
-import com.appdhome.entities.Employee;
-import com.appdhome.entities.PaymentMethod;
-import com.appdhome.services.IAppointmentService;
-
-import com.appdhome.services.ICustomerService;
-import com.appdhome.services.IEmployeeService;
-import com.appdhome.services.IPaymentMethodService;
+import com.appdhome.services.*;
+import com.appdhome.states.State;
+import com.appdhome.factories.WindowsFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +25,9 @@ import java.util.Optional;
 public class AppointmentController {
     @Autowired
     private IAppointmentService appointmentService;
+    @Autowired
+    private IStateService stateService;
+
 
 
 
